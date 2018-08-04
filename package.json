@@ -1,0 +1,130 @@
+{
+  "author": "Muhammad Ubaid Raza <mubaidr@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/mubaidr/vue-electron-template/issues"
+  },
+  "build": {
+    "appId": "org.mubaidr.vue-electron-template",
+    "directories": {
+      "output": "build"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "path": "/Applications",
+          "type": "link",
+          "x": 410,
+          "y": 150
+        },
+        {
+          "type": "file",
+          "x": 130,
+          "y": 150
+        }
+      ]
+    },
+    "files": [
+      "dist/electron/**/*"
+    ],
+    "linux": {
+      "icon": "build/icons",
+      "publish": [
+        "github"
+      ]
+    },
+    "mac": {
+      "icon": "build/icons/icon.icns",
+      "publish": [
+        "github"
+      ]
+    },
+    "productName": "productName",
+    "win": {
+      "icon": "build/icons/icon.ico",
+      "publish": [
+        "github"
+      ]
+    }
+  },
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "vue": "^2.5.16",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "description": "An electron-vue project",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "del": "^3.0.0",
+    "devtron": "^1.4.0",
+    "electron": "^2.0.5",
+    "electron-builder": "^20.26.0",
+    "electron-debug": "^2.0.0",
+    "electron-rebuild": "^1.8.1",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "inject-loader": "^4.0.1",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "0.4.1",
+    "multispinner": "^0.2.1",
+    "node-loader": "^0.6.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "vue-devtools": "^4.1.4",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^15.2.6",
+    "vue-style-loader": "^4.1.1",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "3.1.5",
+    "webpack-hot-middleware": "^2.22.3"
+  },
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "name": "vue-electron-template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubaidr/vue-electron-template.git"
+  },
+  "scripts": {
+    "build": "npm run pack && electron-builder",
+    "build:dir": "npm run pack && electron-builder --dir",
+    "build:linux": "npm run pack && electron-builder --linux",
+    "build:mac": "npm run pack && electron-builder --mac",
+    "build:win": "npm run pack && electron-builder --win",
+    "build:win-app": "npm run pack && electron-builder",
+    "clean": "cross-env BUILD_TARGET=clean node vue-electron/build.js",
+    "dev": "cross-env NODE_ENV=development node vue-electron/dev-runner.js",
+    "lint": "eslint --ext .js,.vue src test",
+    "lint:fix": "eslint --ext .js,.vue --fix src test",
+    "pack": "cross-env NODE_ENV=production npm run pack:main && npm run pack:renderer",
+    "pack:main": "webpack --mode production --hide-modules --config vue-electron/webpack.main.config.js",
+    "pack:renderer": "webpack --mode production --hide-modules --config vue-electron/webpack.renderer.config.js",
+    "postinstall": "electron-builder install-app-deps && npm rebuild node-sass",
+    "rebuild-electron": "./node_modules/.bin/electron-rebuild",
+    "release": "build"
+  },
+  "version": "0.0.1"
+}

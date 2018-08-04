@@ -1,16 +1,15 @@
 {
-  "author": "Muhammad Ubaid Raza <mubaidr@gmail.com>",
+  "author": "Aristotelis",
   "bugs": {
-    "url": "https://github.com/mubaidr/vue-electron-template/issues"
+    "url": "https://aristotelis_stageiritis@bitbucket.org/aristotelis_stageiritis/protocol.git/issues"
   },
   "build": {
-    "appId": "org.mubaidr.vue-electron-template",
+    "appId": "org.aristotelis.protocol",
     "directories": {
       "output": "build"
     },
     "dmg": {
-      "contents": [
-        {
+      "contents": [{
           "path": "/Applications",
           "type": "link",
           "x": 410,
@@ -53,7 +52,7 @@
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
-  "description": "An electron-vue project",
+  "description": "Protocol application",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
@@ -101,12 +100,12 @@
     "webpack-dev-server": "3.1.5",
     "webpack-hot-middleware": "^2.22.3"
   },
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENCE",
   "main": "./dist/electron/main.js",
-  "name": "vue-electron-template",
+  "name": "protocol",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mubaidr/vue-electron-template.git"
+    "url": "git+https://aristotelis_stageiritis@bitbucket.org/aristotelis_stageiritis/protocol.git"
   },
   "scripts": {
     "build": "npm run pack && electron-builder",

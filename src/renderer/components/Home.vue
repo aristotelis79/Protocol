@@ -6,30 +6,23 @@
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title is-1">
-              Vue-Electron-Template
+              Protocol
             </h1>
-            <p>The boilerplate for making electron applications using vue.js </p>
           </div>
-          <br/>
+          <br>
           <div class="block has-text-centered">
-            <a class="button" href="https://github.com/mubaidr">
+            <a class="button" href="#">
               <span class="icon">
-                <i class="fab fa-github" />
+                <i class="fab" />
               </span>
-              <span>Follow me</span>
-            </a>
-            <a class="button" href="https://github.com/mubaidr">
-              <span class="icon">
-                <i class="fa fa-star" />
-              </span>
-              <span>Star</span>
+              <span>Start</span>
             </a>
           </div>
         </div>
       </section>
     </div>
     <div class="section">
-      <system-information/>
+      <system-information v-show="isDev()" />
     </div>
   </div>
 </template>
@@ -40,7 +33,13 @@ import SystemInformation from './Home/SystemInformation'
 export default {
   name: 'Home',
 
-  components: { SystemInformation }
+  components: { SystemInformation },
+
+  methods: {
+    isDev() {
+      return process.env.NODE_ENV === 'development'
+    }
+  }
 }
 </script>
 

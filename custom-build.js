@@ -1,5 +1,7 @@
 const builder = require('electron-builder') // eslint-disable-line
-const { Platform } = builder
+const {
+  Platform
+} = builder
 
 console.log('running build...')
 
@@ -8,7 +10,7 @@ builder
   .build({
     targets: Platform.WINDOWS.createTarget(),
     config: {
-      appId: 'org.mubaidr.vue-electron-template',
+      appId: 'org.aristotelis.protocol',
       directories: {
         output: 'build'
       },
@@ -16,12 +18,10 @@ builder
       productName: 'productName',
       win: {
         icon: 'build/icons/icon.ico',
-        target: [
-          {
-            target: 'portable',
-            arch: ['x64']
-          }
-        ]
+        target: [{
+          target: 'portable',
+          arch: ['x64']
+        }]
       }
     }
   })
